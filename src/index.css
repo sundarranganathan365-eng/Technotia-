@@ -1,0 +1,227 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-pixel: 'Press Start 2P', monospace;
+    --font-retro: 'VT323', monospace;
+    --font-cyber: 'Chakra Petch', sans-serif;
+    --font-modern: 'Space Grotesk', sans-serif;
+    --color-neon: #3cff00;
+    --color-neon-hover: #34dd00;
+    --color-torch: #ffaa00;
+  }
+}
+
+.font-pixel {
+  font-family: var(--font-pixel);
+  letter-spacing: -0.5px;
+}
+
+.font-retro {
+  font-family: var(--font-retro);
+  letter-spacing: 0.5px;
+}
+
+.font-cyber {
+  font-family: var(--font-cyber);
+}
+
+.font-modern {
+  font-family: var(--font-modern);
+}
+
+/* Immersive UI Dot Matrix Background */
+.bg-immersive-grid {
+  background-color: #0c0c0c;
+  background-image: radial-gradient(#1f1f1f 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+}
+
+/* Immersive Hazard Striped Accent */
+.bg-hazard-stripes {
+  background-image: linear-gradient(
+    45deg,
+    #3cff00 25%,
+    transparent 25%,
+    transparent 50%,
+    #3cff00 50%,
+    #3cff00 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 8px 8px;
+}
+
+/* Immersive Hard Block Shadows */
+.shadow-hard-sm {
+  box-shadow: 2px 2px 0 0 #000;
+}
+
+.shadow-hard-md {
+  box-shadow: 4px 4px 0 0 #000;
+}
+
+.shadow-hard-lg {
+  box-shadow: 8px 8px 0 0 #000;
+}
+
+.shadow-hard-xl {
+  box-shadow: 12px 12px 0 0 #000;
+}
+
+/* Immersive Neon Button */
+.btn-immersive {
+  background-color: #3cff00;
+  color: #000000;
+  font-weight: 700;
+  box-shadow: 0 6px 0 0 #2a8800;
+  transition: all 0.1s ease;
+}
+
+.btn-immersive:hover {
+  background-color: #34dd00;
+  box-shadow: 0 4px 0 0 #2a8800;
+}
+
+.btn-immersive:active {
+  transform: translateY(4px);
+  box-shadow: 0 0 0 0 #2a8800;
+}
+
+/* Authentic Pixel Art / Voxel Borders */
+.pixel-box {
+  box-shadow: 
+    -4px 0 0 0 #000,
+    4px 0 0 0 #000,
+    0 -4px 0 0 #000,
+    0 4px 0 0 #000,
+    -8px 0 0 0 rgba(0,0,0,0.2),
+    8px 0 0 0 rgba(0,0,0,0.2),
+    0 -8px 0 0 rgba(0,0,0,0.2),
+    0 8px 0 0 rgba(0,0,0,0.2);
+}
+
+.pixel-btn {
+  position: relative;
+  box-shadow: 
+    inset -3px -3px 0px 0px rgba(0, 0, 0, 0.4),
+    inset 3px 3px 0px 0px rgba(255, 255, 255, 0.3),
+    0 4px 0 0 #111;
+  transition: transform 0.05s ease, box-shadow 0.05s ease;
+}
+
+.pixel-btn:active {
+  transform: translateY(3px);
+  box-shadow: 
+    inset -2px -2px 0px 0px rgba(0, 0, 0, 0.4),
+    inset 2px 2px 0px 0px rgba(255, 255, 255, 0.2),
+    0 1px 0 0 #111;
+}
+
+.pixel-card {
+  background-color: #2a2a2a;
+  border: 4px solid #1a1a1a;
+  box-shadow: 12px 12px 0 0 #000;
+}
+
+/* Pixel Grid Backgrounds */
+.bg-dirt-pattern {
+  background-color: #3b2515;
+  background-image: 
+    radial-gradient(#2b1a0d 15%, transparent 16%),
+    radial-gradient(#4d321d 15%, transparent 16%);
+  background-size: 16px 16px;
+  background-position: 0 0, 8px 8px;
+}
+
+.bg-stone-pattern {
+  background-color: #1a1a1a;
+  background-image: 
+    radial-gradient(#121212 18%, transparent 19%),
+    radial-gradient(#262626 18%, transparent 19%);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+}
+
+.bg-dark-stone-pattern {
+  background-color: #0c0c0c;
+  background-image: 
+    radial-gradient(#050505 20%, transparent 21%),
+    radial-gradient(#181818 15%, transparent 16%);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+}
+
+/* Scanline / CRT Subtle overlay */
+.scanlines {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.3) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(60, 255, 0, 0.02),
+    rgba(0, 0, 0, 0.01),
+    rgba(60, 255, 0, 0.02)
+  );
+  background-size: 100% 4px, 6px 100%;
+  pointer-events: none;
+}
+
+/* 3D block perspective */
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba(60, 255, 0, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(60, 255, 0, 0.9));
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2.5s infinite ease-in-out;
+}
+
+@keyframes floatBob {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(1deg);
+  }
+}
+
+.animate-float-bob {
+  animation: floatBob 3s infinite ease-in-out;
+}
+
+@keyframes torchFlicker {
+  0%, 100% { opacity: 0.95; transform: scale(1); }
+  25% { opacity: 1; transform: scale(1.04) rotate(1deg); }
+  50% { opacity: 0.88; transform: scale(0.96); }
+  75% { opacity: 1; transform: scale(1.02) rotate(-1deg); }
+}
+
+.animate-torch {
+  animation: torchFlicker 0.25s infinite ease-in-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0c0c0c;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3cff00;
+}
+
